@@ -9,9 +9,9 @@ app.get('/', (req, res) => {
     const language = req.headers['accept-language'].split(',')[0];
     const software = req.headers['user-agent'].split('(')[1].split(')')[0];
     const output = {ipaddress, language, software};
-    
+
     res.writeHead(200, {'Content-Type': 'application/json'});
     res.end(JSON.stringify(output));
 });
 
-app.listen(app.get('port'), '127.0.0.1');
+app.listen(app.get('port'));
